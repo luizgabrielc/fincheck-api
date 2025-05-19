@@ -1,9 +1,9 @@
 import { plainToInstance } from 'class-transformer';
-import { IsEmpty, IsString, NotEquals, validateSync } from 'class-validator';
+import { IsNotEmpty, IsString, NotEquals, validateSync } from 'class-validator';
 
 class Env {
   @IsString()
-  @IsEmpty()
+  @IsNotEmpty()
   @NotEquals('unsecure_jwt_secret')
   jwtSecret: string;
 }
